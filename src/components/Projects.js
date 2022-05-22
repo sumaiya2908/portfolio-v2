@@ -1,24 +1,21 @@
 import { Box, Card, CardActions, CardContent, CardHeader } from '@mui/material'
-import React, {useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineGithub, AioutlineE } from 'react-icons/ai'
 import { FiExternalLink } from 'react-icons/fi'
 import axios from 'axios'
 function Projects() {
+    const [projects, setProjects] = useState([])
+    const config = {
+        headers: { Authorization: `Bearer ${process.env.REACT_APP_STRAPI_TOKEN}` }
+    };
     useEffect(() => {
-        window.process = {
-          ...window.process,
-        };
-      }, []);
-    const instance = axios.create({
-        baseURL: 'http://localhost:1337/api/projects',
-        timeout: 1000,
-        headers: {'Authorization': 'Bearer '+ window.process.env.REACT_APP_STRAPI_TOKEN}
-      });
-      
-      instance.get('/path')
-      .then(response => {
-          console.log(response)
-      })
+        axios.get(
+            'http://localhost:1337/api/projects',
+            config
+        )
+            .then((response) => setProjects(response.data.data))
+            .catch(console.log);
+    }, [])
 
     return (
         <Box className='box gray-bg layout-padding'>
@@ -27,19 +24,21 @@ function Projects() {
                 Projects
             </Box>
             <Box className='project-container layout-padding'>
-                <Card variant="outlined" className='card'>
-                    <CardHeader title="Project 1" />
-                    <CardContent>
-                        Adipi  sicing sit fugit ullam unde aliquid sequi Facilis soluta facilis perspiciatis corporis nulla aspernatur.
-                    </CardContent>
-                    <CardActions>
-                        <AiOutlineGithub className='icon' />
-                        <FiExternalLink className='icon' />
-                    </CardActions>
-                </Card>
+                {projects.map(({ attributes }, i) => {
+                    return (<Card variant="outlined" className='card' key={i}>
+                        <CardHeader title={attributes.title} />
+                        <CardContent>
+                            {attributes.description}
+                        </CardContent>
+                        <CardActions>
+                            {attributes.github ? <a href="" ><AiOutlineGithub className='icon' /></a> : null}
+                            {attributes.web ? <a href=""><FiExternalLink className='icon' /></a> : null}
+                        </CardActions>
+                    </Card>)
+                })}
+
             </Box>
         </Box>
-
     )
 }
 
