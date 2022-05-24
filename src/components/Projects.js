@@ -10,7 +10,7 @@ function Projects() {
     };
     useEffect(() => {
         axios.get(
-            'http://localhost:1337/api/projects',
+            'https://strapi-backend-portfoliov2.herokuapp.com/api/projects',
             config
         )
             .then((response) => setProjects(response.data.data))
