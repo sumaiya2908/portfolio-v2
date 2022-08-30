@@ -18,7 +18,7 @@ function Projects() {
     }, [])
 
     return (
-        <Box className='box gray-bg layout-padding'>
+        <Box className='box grey-bg layout-padding'>
 
             <Box className='border-bottom large-text'>
                 Projects
@@ -31,8 +31,8 @@ function Projects() {
                             {attributes.description}
                         </CardContent>
                         <CardActions>
-                            {attributes.github ? <a href="" ><AiOutlineGithub className='icon' /></a> : null}
-                            {attributes.web ? <a href=""><FiExternalLink className='icon' /></a> : null}
+                            {attributes.github ? <a href={attributes.github} target="_blank" ><AiOutlineGithub className='icon' /></a> : null}
+                            {attributes.web ? <a href={attributes.web} target="_blank"><FiExternalLink className='icon' /></a> : null}
                         </CardActions>
                     </Card>)
                 })}
