@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import moment from 'moment';
 
 import config from '../config';
 
@@ -29,7 +30,7 @@ function CodingBook() {
 					{attributes.description}
 					</Box>
 					<Box className='note-date'>
-					{attributes.createdAt}
+					{moment(attributes.createdAt).format("MMM Do YYYY")}
 					</Box>
 				</Box>
 			)
