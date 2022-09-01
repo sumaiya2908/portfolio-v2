@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react'
 import { AiOutlineGithub, AioutlineE } from 'react-icons/ai'
 import { FiExternalLink } from 'react-icons/fi'
 import axios from 'axios'
+
+import config from '../config';
 function Projects() {
     const [projects, setProjects] = useState([])
-    const config = {
-        headers: { Authorization: `Bearer ${process.env.REACT_APP_STRAPI_TOKEN}` }
-    };
+    
     useEffect(() => {
         axios.get(
             'https://strapi-backend-portfoliov2.herokuapp.com/api/projects',
