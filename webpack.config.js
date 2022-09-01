@@ -1,19 +1,20 @@
 const path = require("path");
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /*We are basically telling webpack to take index.js from entry. Then check for all file extensions in resolve. 
 After that apply all the rules in module.rules and produce the output and place it in main.js in the public folder.*/
 
-module.exports={
+module.exports = {
     /** "mode"
      * the environment - development, production, none. tells webpack 
      * to use its built-in optimizations accordingly. default is production 
      */
-    mode: "development", 
+    mode: "development",
     /** "entry"
      * the entry point 
      */
-    entry: "./index.js", 
+    entry: "./index.js",
     output: {
         /** "path"
          * the folder path of the output file 
@@ -47,7 +48,7 @@ module.exports={
          * "only" is used if enable Hot Module Replacement without page 
          * refresh as a fallback in case of build failures
          */
-        hot: true ,
+        hot: true,
         /** "liveReload"
          * disable live reload on the browser. "hot" must be set to false for this to work
         */
@@ -59,9 +60,9 @@ module.exports={
          * resolve the one with the extension listed first in the array and skip the rest. 
          * This is what enables users to leave off the extension when importing
          */
-        extensions: ['.js','.jsx','.json'] 
+        extensions: ['.js', '.jsx', '.json']
     },
-    module:{
+    module: {
         /** "rules"
          * This says - "Hey webpack compiler, when you come across a path that resolves to a '.js or .jsx' 
          * file inside of a require()/import statement, use the babel-loader to transform it before you 
@@ -72,18 +73,25 @@ module.exports={
             {
                 test: /\.(js|jsx)$/,    //kind of file extension this rule should look for and apply in test
                 exclude: /node_modules/, //folder to be excluded
-                use:  'babel-loader', //loader which we are going to use
+                use: 'babel-loader', //loader which we are going to use
 
             },
-            { 
-                test: /\.css$/, 
-                use: ['style-loader', 'css-loader'] 
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
-            {test: /\.(jpe?g|png|gif|svg)$/i, use: "file-loader?name=app/images/[name].[ext]"},
-            
+            { test: /\.(jpe?g|png|gif|svg)$/i, use: "file-loader?name=app/images/[name].[ext]" },
+
         ]
     },
+    devServer: {
+        historyApiFallback: true,
+      },
     plugins: [
-        new Dotenv()
-      ]
+        new Dotenv(),
+        new HtmlWebpackPlugin({
+            template: './public/index.html'
+        })
+    ]
+
 }
