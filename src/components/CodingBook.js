@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 
 import config from '../config';
+import NavBar from './NavBar';
 
 function CodingBook() {
 	const [notes, setNotes] = useState([]);
@@ -20,6 +21,7 @@ function CodingBook() {
 
 	return (
 		<Box className='box gray-bg layout-padding fullview-box notes-container'>
+		<NavBar/>
 		{notes.map(({attributes}, i) => {
 			return(
 				<Box className='note-container border-b border-secondary' key={i}>
