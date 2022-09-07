@@ -5,18 +5,17 @@ import Home from './components/Home';
 import { BrowserRouter, Route, Routes, Ind } from 'react-router-dom';
 import Testani from './components/testani';
 import CodingBook from './components/CodingBook';
+import CodingBookTitle from './components/CodingBookTitle';
 function App() {
 	return (
 		<BrowserRouter>
 			<Box>
-
 				<Routes>
 					<Route exact path="/" element={<Home />}> </Route>
 					<Route path="/coding-book" element={<CodingBook />}></Route>
+					<Route path="/coding-book/:title" element={<CodingBookTitle />}></Route>
 				</Routes>
 			</Box>
-
-
 		</BrowserRouter>
 
 	)
