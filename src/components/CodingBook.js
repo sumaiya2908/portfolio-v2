@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, CircularProgress } from '@mui/material'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
@@ -9,13 +9,14 @@ import { Link } from 'react-router-dom';
 
 function CodingBook() {
 	const [notes, setNotes] = useState([]);
+	const[loading, setLoading] = useState(true)
 
 	useEffect(() => {
 		axios.get(
 			'https://strapi-backend-portfoliov2.herokuapp.com/api/code-books',
 			config
 		)
-			.then((response) => setNotes(response.data.data))
+			.then((response) => {setNotes(response.data.data); setLoading(false)})
 			.catch((err) => console.log(err))
 
 	}, [])
@@ -24,7 +25,8 @@ function CodingBook() {
 		<Box className="coding-book box gray-bg">
 			<NavBar />
 			<Box className='box gray-bg layout-padding fullview-box notes-container'>
-
+				{loading ?
+				<CircularProgress className='loader'/> : null}
 				{notes.map(({ attributes }, i) => {
 					return (
 						<Box className='note-container border-b border-secondary' key={i}>
