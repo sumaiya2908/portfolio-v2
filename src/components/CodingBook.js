@@ -18,11 +18,10 @@ function CodingBook() {
 		)
 			.then((response) => {setNotes(response.data.data); setLoading(false)})
 			.catch((err) => console.log(err))
-
 	}, [])
 
 	return (
-		<Box className="coding-book box gray-bg">
+		<Box className='coding-book box gray-bg'>
 			<NavBar />
 			<Box className='box gray-bg layout-padding fullview-box notes-container'>
 				{loading ?
@@ -30,7 +29,7 @@ function CodingBook() {
 				{notes.map(({ attributes }, i) => {
 					return (
 						<Box className='note-container border-b border-secondary' key={i}>
-							<Link to={'/coding-book/' + attributes.title}>
+							<Link to={'/codebook/' + attributes.title}>
 								<Box className='note-title'>
 									{attributes.title}
 								</Box>
@@ -39,12 +38,11 @@ function CodingBook() {
 								{attributes.description}
 							</Box>
 							<Box className='note-date'>
-								{moment(attributes.createdAt).format("MMM Do YYYY")}
+								{moment(attributes.createdAt).format('MMM Do YYYY')}
 							</Box>
 						</Box>
 					)
 				})}
-
 			</Box>
 		</Box>
 	)

@@ -7,7 +7,7 @@ import axios from 'axios'
 import config from '../config';
 function Projects() {
     const [projects, setProjects] = useState([])
-    
+
     useEffect(() => {
         axios.get(
             'https://strapi-backend-portfoliov2.herokuapp.com/api/projects',
@@ -25,14 +25,14 @@ function Projects() {
             </Box>
             <Box className='project-container layout-padding'>
                 {projects.map(({ attributes }, i) => {
-                    return (<Card variant="outlined" className='card' key={i}>
+                    return (<Card variant='outlined' className='card' key={i}>
                         <CardHeader title={attributes.title} />
                         <CardContent>
                             {attributes.description}
                         </CardContent>
                         <CardActions>
-                            {attributes.github ? <a href={attributes.github} target="_blank" ><AiOutlineGithub className='icon' /></a> : null}
-                            {attributes.web ? <a href={attributes.web} target="_blank"><FiExternalLink className='icon' /></a> : null}
+                            {attributes.github ? <a href={attributes.github} target='_blank'><AiOutlineGithub className='icon' /></a> : null}
+                            {attributes.web ? <a href={attributes.web} target='_blank'><FiExternalLink className='icon' /></a> : null}
                         </CardActions>
                     </Card>)
                 })}
