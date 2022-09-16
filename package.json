@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "A personal portfolio made with React by Summayya",
   "main": "index.js",
+  "type": "module",
   "resolutions": {
     "react-error-overlay": "6.0.9"
   },
   "scripts": {
-    "start": "webpack-dev-server .",
-    "build": "Webpack .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "Summayya",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/runtime": "^7.17.9",
+    "@vitejs/plugin-react": "^2.1.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
@@ -32,6 +34,8 @@
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
     "style-loader": "^3.3.1",
+    "vite": "^3.1.1",
+    "vite-plugin-html": "^3.2.0",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.10.1"
@@ -39,8 +43,6 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.8.0",
-    "@mui/material": "^5.8.0",
     "axios": "^0.27.2",
     "install": "^0.13.0",
     "moment": "^2.29.4",
