@@ -1,4 +1,3 @@
-import { Box, Card, CardActions, CardContent, CardHeader } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import { AiOutlineGithub, AioutlineE } from 'react-icons/ai'
 import { FiExternalLink } from 'react-icons/fi'
@@ -18,12 +17,12 @@ function Projects() {
     }, [])
 
     return (
-        <Box className='box grey-bg layout-padding'>
+        <div className='box grey-bg layout-padding'>
 
-            <Box className='border-bottom large-text'>
+            <div className='border-bottom large-text'>
                 Projects
-            </Box>
-            <Box className='project-container layout-padding'>
+            </div>
+            <div className='project-container layout-padding'>
                 {projects.map(({ attributes }, i) => {
                     return (<Card variant='outlined' className='card' key={i}>
                         <CardHeader title={attributes.title} />
@@ -37,8 +36,8 @@ function Projects() {
                     </Card>)
                 })}
 
-            </Box>
-        </Box>
+            </div>
+        </div>
     )
 }
 
