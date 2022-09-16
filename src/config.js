@@ -1,5 +1,5 @@
 const config = {
-    headers: { Authorization: `Bearer ${process.env.REACT_APP_STRAPI_TOKEN}` }
+    headers: { Authorization: `Bearer ${import.meta.env.VITE_STRAPI_TOKEN}` }
 };
 
 export default config;
