@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import document from '../../public/Document/resume.pdf'
 
 function NavBar() {
-	const NavItems = ['Home', 'About', 'Projects', 'CodeBook', 'Resume'];
+
+	const NavItems = ['Home', 'About', 'Projects', 'Resume'];
+
 	return (
 		<div className='nav-container'>
 
@@ -15,11 +17,11 @@ function NavBar() {
 						</div>
 					)
 				}
-				
+
 				return (
 					<div className='nav-item' key={i}>
-					<Link to={`\/${Item.toLowerCase()}`}>{Item}</Link>
-				</div>)
+						<Link to={`\/${Item.toLowerCase()}`}>{Item}</Link>
+					</div>)
 			})}
 
 		</div>
