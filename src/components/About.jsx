@@ -14,21 +14,41 @@ function About() {
                     <div className='heading colored-text large-text typing'>About Me.</div>
                     <div className='about-body'>
                         <p >
-                            Hello there! I am Summayya. I am a self-taught fullstack developer. I completed my graduation in 2022.
-                        </p>
-
-                        <p>
-                            I believe in learning by doing philosphy. So whatever tech I tend to learn, I make a project out of it. Check out some <Link className='colored-text' to="/projects">here.</Link>
+                            I am a self-taught Fullstack developer. I graduated in
+                            2022 with almost one year of full-time software developer experience.
                         </p>
                         <p>
-                            When I am not coding or learning, I am probably watching some space documentory and indulging myself in existential crisis.
+                            I practice the MERN stack and I have built side projects to
+                            plunge into technology. I usually enjoy learning both backend
+                            and frontend technologies, but I tend to be more inclined to
+                            the UI/UX aspect of the project. In the last job, I learned
+                            the skill of attention to detail and now practice it when
+                            developing user interfaces.
+                        </p>
+                        <p>
+                            I believe in learning by doing philosophy, so
+                            <Link className='colored-text' to="/projects">here.</Link>
+                            are some of the projects I have built while exploring
+                            different technologies. These technologies include React,
+                            Python, GraphQL, Vite, etc.
+                        </p>
+                        <p>
+                            Currently, I am learning different animations using CSS to make
+                            the user experience smooth. I am also exploring the field of creative
+                            coding that fascinates me.
+                        </p>
+                        <p>
+                            When I am not coding, I usually watch space documentaries and philosophy.
+                            These things always remind me how minute I am comparable to this vast
+                            universe and give me a kick of existential crisis. Nowadays I am reading
+                            `The God Delusional` by Richard Dawkins.
                         </p>
 
                     </div>
                     <Socials />
                 </div>
             </div>
-            
+
         </>
     )
 }
