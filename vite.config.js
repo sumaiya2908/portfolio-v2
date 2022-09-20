@@ -8,7 +8,7 @@ export default defineConfig({
     port: 8000,
   },
   build: {
-    outDir: './dist'
+    outDir: './build'
   },
   define: {
     'process.env': process.env
