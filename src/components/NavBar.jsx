@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import document from '../../public/Document/resume.pdf'
 
 function NavBar() {
 	const NavItems = ['Home', 'About', 'Projects', 'CodeBook', 'Resume'];
