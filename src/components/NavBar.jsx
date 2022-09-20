@@ -6,8 +6,18 @@ function NavBar() {
 	const NavItems = ['Home', 'About', 'Projects', 'CodeBook', 'Resume'];
 	return (
 		<div className='nav-container'>
+
 			{NavItems.map((Item, i) => {
-				return (<div className='nav-item' key={i}>
+				if (Item == 'Resume') {
+					return (
+						<div className='nav-item' key={i}>
+							<Link target='_blank' to={document}>{Item}</Link>
+						</div>
+					)
+				}
+				
+				return (
+					<div className='nav-item' key={i}>
 					<Link to={`\/${Item.toLowerCase()}`}>{Item}</Link>
 				</div>)
 			})}
