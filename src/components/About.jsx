@@ -27,7 +27,7 @@ function About() {
                         </p>
                         <p>
                             I believe in learning by doing philosophy, so
-                            <Link className='colored-text' to="/projects"> here</Link>
+                            <Link className='colored-text' to="/projects"> here </Link>
                             are some of the projects I have built while exploring
                             different technologies. These technologies include React,
                             Python, GraphQL, Vite, etc.
