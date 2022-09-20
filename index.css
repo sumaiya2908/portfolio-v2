@@ -337,18 +337,44 @@ a {
     .large-text {
         font-size: 1.5rem;
     }
-    
-    .hero-container {
-        margin: auto 2rem;
+
+    .hero-container .colored-text {
+        font-size: 1.5rem;
     }
+
+    .container {
+        margin: 5rem 1.2rem;
+        max-width: 100%;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+
+    .hero-container {
+        margin: auto 1.2rem;
+    }
+
+    .hero-about {
+        margin-top: 1.5rem;
+    }
+
+    .hero-container .large-text {
+        font-size: 1.28rem;
+        margin-bottom: 0.4rem;
+    }
+
     .icon {
         width: 18px;
-        height: 18px;   
-        margin-right: 0.6rem;
+        height: 18px;
+        margin-bottom: 0.2rem;
     }
+
     .hero-about-text {
         font-size: 0.9rem;
     }
+
     .pb-1 {
         padding-bottom: 1px;
     }
@@ -357,21 +383,38 @@ a {
         font-size: 0.8rem;
     }
 
+    .hero-container .socials {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+    }
+
     .about-body {
         font-size: 1rem;
     }
+
+    .heading {
+        margin-bottom: 1.5rem;
+    }
+
     .project-title {
         font-size: 1.1rem;
     }
+
     .project-desc {
         font-size: 0.9rem;
     }
+
     .nav-container {
         font-size: 1rem;
-    }.nav-item {
+        padding: 0.8rem 0;
+    }
+
+    .nav-item {
         text-align: center;
         margin: auto 1rem;
     }
+
     .note-title {
         font-size: 0.9rem;
     }
