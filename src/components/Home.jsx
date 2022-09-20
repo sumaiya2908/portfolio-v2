@@ -2,7 +2,8 @@ import React from 'react'
 import { AiOutlineGithub, AiOutlineLinkedin} from 'react-icons/ai'
 import {SiHashnode} from 'react-icons/si'
 
-import NavBar from './NavBar'
+import Hero from './Hero'
+import About from './About'
 
 function Home() {
   return (
