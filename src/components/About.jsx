@@ -27,15 +27,10 @@ function About() {
                         </p>
                         <p>
                             I believe in learning by doing philosophy, so
-                            <Link className='colored-text' to="/projects">here.</Link>
+                            <Link className='colored-text' to="/projects"> here</Link>
                             are some of the projects I have built while exploring
                             different technologies. These technologies include React,
                             Python, GraphQL, Vite, etc.
-                        </p>
-                        <p>
-                            Currently, I am learning different animations using CSS to make
-                            the user experience smooth. I am also exploring the field of creative
-                            coding that fascinates me.
                         </p>
                         <p>
                             When I am not coding, I usually watch space documentaries and philosophy.
