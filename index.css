@@ -334,7 +334,44 @@ a {
 /* Media Queries */
 
 @media only screen and (max-device-width: 480px) {
+    .large-text {
+        font-size: 1.5rem;
+    }
+    
+    .hero-container {
+        margin: auto 2rem;
+    }
+    .icon {
+        width: 18px;
+        height: 18px;   
+        margin-right: 0.6rem;
+    }
+    .hero-about-text {
+        font-size: 0.9rem;
+    }
+    .pb-1 {
+        padding-bottom: 1px;
+    }
 
+    .hero-about .arrow {
+        font-size: 0.8rem;
+    }
+
+    .about-body {
+        font-size: 1rem;
+    }
+    .project-title {
+        font-size: 1.1rem;
+    }
+    .project-desc {
+        font-size: 0.9rem;
+    }
+    .nav-container {
+        font-size: 1rem;
+    }.nav-item {
+        text-align: center;
+        margin: auto 1rem;
+    }
     .note-title {
         font-size: 0.9rem;
     }
